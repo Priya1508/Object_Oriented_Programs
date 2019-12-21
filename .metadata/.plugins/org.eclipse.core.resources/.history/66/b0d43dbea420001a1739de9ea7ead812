@@ -1,0 +1,65 @@
+package com.bridgelabz.addressbook.services;
+
+import java.util.List;
+
+import com.bridgelabz.addressbook.model.PersonalDetails;
+
+public class Operation
+{
+	Utility u=new Utility();
+	
+	public List<PersonalDetails> addUser(List<PersonalDetails> listOfPerson)
+	{
+		do
+		{
+			PersonalDetails person=new PersonalDetails();
+			
+			System.out.println("Enter the First Name: ");
+			person.setFname(u.inputString());
+			
+			System.out.println("Enter the Last Name: ");
+			person.setLname(u.inputString());
+			
+			System.out.println("Enter the Address: ");
+			person.setAddress(u.inputString());
+			
+			System.out.println("Enter the City: ");
+			person.setCity(u.inputString());
+			
+			System.out.println("Enter the State: ");
+			person.setState(u.inputString());
+			
+			System.out.println("Enter the Zip Code: ");
+			person.setZip(u.inputInteger());
+			
+			System.out.println("Enter the Phone Number: ");
+			person.setPhn(u.inputLong());
+			
+			listOfPerson.add(person);
+			System.out.println("Person added successfully");
+			System.out.println("To add more person type true");
+			return listOfPerson;
+			
+		}while(u.inputBoolean());
+	}
+
+	public boolean deleteUser(List<PersonalDetails> listOfPerson) {
+		do {
+			System.out.println("Enter the First Name of the person you want to delete: ");
+			String firstName = u.inputString();
+
+			for (int i = 0; i < listOfPerson.size(); i++) 
+			{
+				if (listOfPerson.get(i).getFname().equals(firstName)) 
+				{
+					listOfPerson.remove(i);
+					System.out.println("Person's detail deleted successfully");
+					System.out.println("To delete more person ");
+					return true;
+				}
+			}
+		} while (u.inputBoolean());
+		return false;
+	}
+}
+

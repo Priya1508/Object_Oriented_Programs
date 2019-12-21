@@ -1,0 +1,21 @@
+package com.bridgelabz.addressbook.repository;
+
+import java.io.File;
+import java.io.IOException;
+import java.util.List;
+
+import org.codehaus.jackson.map.ObjectMapper;
+
+import com.bridgelabz.addressbook.model.Person;
+
+
+public class Connection {
+
+	
+	ObjectMapper mapper = new ObjectMapper();
+	File file = new File("AddressBook.json");
+	public void writeFile(List<Person> personlist) throws IOException
+	{
+		mapper.writeValue(file,personlist);
+	}
+}

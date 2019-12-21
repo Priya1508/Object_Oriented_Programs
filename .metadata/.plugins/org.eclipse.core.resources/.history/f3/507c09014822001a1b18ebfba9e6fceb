@@ -1,0 +1,97 @@
+package com.bridgelabz.clinique_management.model;
+
+public class Appointment
+{
+	private String Name;
+	private int Id;
+	private String Specialization;
+	private String Availability;
+	private int Appointment;
+	public String getName()
+	{
+		return Name;
+	}
+	public void setName(String name) 
+	{
+		Name = name;
+	}
+	public int getId()
+	{
+		return Id;
+	}
+	public void setId(int id) 
+	{
+		Id = id;
+	}
+	public String getSpecialization()
+	{
+		return Specialization;
+	}
+	public void setSpecialization(String specialization)
+	{
+		Specialization = specialization;
+	}
+	public String getAvailability()
+	{
+		return Availability;
+	}
+	public void setAvailability(String availability) 
+	{
+		Availability = availability;
+	}
+	public int getAppointment()
+	{
+		return Appointment;
+	}
+	public void setAppointment(int appointment) 
+	{
+		Appointment = appointment;
+	}
+	@Override
+	public String toString() 
+	{
+		return "Appointment [Name=" + Name + ", Id=" + Id + ", Specialization=" + Specialization + ", Availability="
+				+ Availability + ", Appointment=" + Appointment + "]";
+	}
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + Appointment;
+		result = prime * result + ((Availability == null) ? 0 : Availability.hashCode());
+		result = prime * result + Id;
+		result = prime * result + ((Name == null) ? 0 : Name.hashCode());
+		result = prime * result + ((Specialization == null) ? 0 : Specialization.hashCode());
+		return result;
+	}
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Appointment other = (Appointment) obj;
+		if (Appointment != other.Appointment)
+			return false;
+		if (Availability == null) {
+			if (other.Availability != null)
+				return false;
+		} else if (!Availability.equals(other.Availability))
+			return false;
+		if (Id != other.Id)
+			return false;
+		if (Name == null) {
+			if (other.Name != null)
+				return false;
+		} else if (!Name.equals(other.Name))
+			return false;
+		if (Specialization == null) {
+			if (other.Specialization != null)
+				return false;
+		} else if (!Specialization.equals(other.Specialization))
+			return false;
+		return true;
+	}
+}

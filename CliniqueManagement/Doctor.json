@@ -1,0 +1,25 @@
+[ {
+  "name" : "nikita",
+  "id" : 102,
+  "specialization" : "ears",
+  "availability" : "morning",
+  "appointment" : 4
+}, {
+  "name" : "priya",
+  "id" : 103,
+  "specialization" : "eyes",
+  "availability" : "morning",
+  "appointment" : 3
+}, {
+  "name" : "vaibhav",
+  "id" : 101,
+  "specialization" : "nose",
+  "availability" : "night",
+  "appointment" : 3
+}, {
+  "name" : "nihal",
+  "id" : 104,
+  "specialization" : "dentist",
+  "availability" : "both",
+  "appointment" : 3
+} ]

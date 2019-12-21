@@ -1,0 +1,57 @@
+
+public class Utility 
+{
+	//FOR QUEUE
+		public static int front1=0;
+		public static int rear1=0;
+		static int size2=0;
+		
+		public static boolean isFull1()
+		{
+			int MAXSIZE=100;
+			if(rear1==MAXSIZE)
+			{
+				return true;
+			}
+			else
+			{
+				return false;
+			}
+		}
+		
+		public static boolean isEmpty2()
+		{
+			if(front1<0 || front1>rear1)
+			{
+				return true;
+			}
+			else
+			{
+				return false;
+			}
+		}
+		//To insert the elements in queue
+		public static void enqueue(int count)
+		{
+			if(isEmpty2())
+			{
+				rear1=rear1+1;
+			}
+			else
+			{
+				System.out.println("Queue overflow");
+			}
+		}
+		//To remove the elements from the queue
+		public static void dequeue()
+		{
+			if(isEmpty2())
+			{
+				System.out.println("Queue underflow");
+			}
+			else
+			{
+				front1=front1+1;
+			}
+		}
+}

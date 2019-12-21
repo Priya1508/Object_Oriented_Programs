@@ -1,0 +1,126 @@
+package com.bridgelabz.inventorymanagement.service;
+
+import java.util.List;
+
+import com.bridgelabz.inventorymanagement.model.Details;
+
+public class Operation
+{
+	Details detail=new Details();
+	//TO ADD INVENTORY
+	public List<Details> addInventory(List<Details> listOfInventory)
+	{
+		do
+		{
+			
+			System.out.println("Enter 1 to add inventory in Rice");
+			System.out.println("Enter 2 to add inventory in Pulses");
+			System.out.println("Enter 3 to add inventory in Wheat");
+			int choice=Utility.inputInteger();
+			switch(choice)
+			{
+			case 1:
+				System.out.println("ENter the name of Inventory ");
+				String invenName=Utility.inputString();
+				detail.setName(invenName);
+				System.out.println("Enter how much kg of rice you want to add");
+				detail.setWeight(Utility.inputLong());
+				listOfInventory.add(detail);
+				System.out.println("Inventory added successfully");
+				System.out.println("To add more inventory type TRUE");
+				break;
+				
+			case 2:
+				
+				System.out.println("Enter how much kg of pulse you want to add");
+				detail.setWeight(Utility.inputLong());
+				listOfInventory.add(detail);
+				System.out.println("Inventory added successfully");
+				System.out.println("To add more inventory type TRUe");
+				break;
+				
+			case 3:
+				System.out.println("Enter how much kg of wheat you want to add");
+				detail.setWeight(Utility.inputLong());
+				listOfInventory.add(detail);
+				System.out.println("Inventory added successfully");
+				System.out.println("To add more inventory type TRUE");
+				break;
+			}
+			return listOfInventory;
+		}while(Utility.inputBoolean());
+	}
+	
+	public List<Details> removeInventory(List<Details> listOfInventory)
+	{
+		do
+		{
+			System.out.println("Enter 1 to remove inventory from rice");
+			System.out.println("Enter 2 to remove inventory from pulse");
+			System.out.println("Enter 3 to remove inventory from wheat");
+			int choice=Utility.inputInteger();
+			switch(choice)
+			{
+			case 1:
+				System.out.println("Enter how much kg of rice you want to remove");
+				detail.setWeight(Utility.inputLong());
+				listOfInventory.remove(detail);
+				System.out.println("inventory removed successfully");
+				System.out.println("To remove more inventory type TRUE");
+				break;
+				
+			case 2:
+				System.out.println("Enter how much kg of pulses ypu want to remove");
+				detail.setWeight(Utility.inputLong());
+				listOfInventory.remove(detail);
+				System.out.println("Inventory removed successfully");
+				System.out.println("To remove more inventory type TRUE");
+				break;
+				
+			case 3:
+				System.out.println("Enter how much kg of wheat you want to remove");
+				detail.setWeight(Utility.inputLong());
+				listOfInventory.remove(detail);
+				System.out.println("Inventory removed successfully");
+				System.out.println("To remove more inventory type TRUE");
+				break;
+			}
+			return listOfInventory;
+		}while(Utility.inputBoolean());
+	}
+	
+	public List<Details> totalPrice(List<Details> listOfDetails)
+	{
+		do
+		{
+			System.out.println("Enter 1 to find the total price of the rice");
+			System.out.println("Enter 2 to find the total price of the pulses");
+			System.out.println("Enter 3 to find the total price of the wheat");
+			int choice=Utility.inputInteger();
+			switch(choice)
+			{
+			case 1:
+				long totalWeight=detail.getWeight();
+				float price=detail.getPriceperkg();
+				float totalPrice=(totalWeight*price);
+				System.out.println("Total price of rice is "+totalPrice);
+				break;
+				
+			case 2:
+				long totalWeight1=detail.getWeight();
+				float price1=detail.getPriceperkg();
+				float totalPrice1=(totalWeight1*price1);
+				System.out.println("Total price of pulses is "+totalPrice1);
+				break;
+				
+			case 3:
+				long totalWeight2=detail.getWeight();
+				float price2=detail.getPriceperkg();
+				float totalPrice3=(totalWeight2*price2);
+				System.out.println("Total price of wheat is "+totalPrice3);
+				break;
+			}
+			return listOfDetails;
+		}while(Utility.inputBoolean());
+	}
+}

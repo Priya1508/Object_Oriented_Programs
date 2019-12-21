@@ -1,0 +1,5 @@
+package com.bridgelabz.stockmanagement.model;
+
+public class StockDetails {
+
+}

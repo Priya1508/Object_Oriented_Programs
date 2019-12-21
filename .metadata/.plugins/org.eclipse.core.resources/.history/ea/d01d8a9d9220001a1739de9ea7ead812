@@ -1,0 +1,30 @@
+package com.bridgelabz.addressbook.controller;
+
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Scanner;
+
+import com.bridgelabz.addressbook.model.Person;
+import com.bridgelabz.addressbook.repository.Connection;
+import com.bridgelabz.addressbook.services.Operation;
+
+public class AddressBook {
+
+	public static void main(String[] args)  {
+		Scanner sc = new Scanner(System.in);
+		List<Person> list = new LinkedList<>();
+		Operation op =new Operation();
+		
+		
+		
+		Connection con = new Connection();
+		System.out.println("Enter choice");
+		int c = sc.nextInt();
+		switch(c) {
+		case 1:	
+		List<Person> list =op.addUser(list);
+		con.writeFile(list);
+		}
+	}
+
+}

@@ -1,0 +1,5 @@
+package com.bridgelabz.stockmanagement.repository;
+
+public class Controller {
+
+}
