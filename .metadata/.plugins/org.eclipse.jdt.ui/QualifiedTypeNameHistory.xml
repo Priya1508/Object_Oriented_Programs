@@ -1,9 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="com.bridgelabz.ds.utility.Utility1"/>
-    <fullyQualifiedTypeName name="com.bridgelabz.data_structures.data_structs.Orderedlist"/>
-    <fullyQualifiedTypeName name="java.util.Arrays"/>
-    <fullyQualifiedTypeName name="java.lang.System"/>
     <fullyQualifiedTypeName name="Linked_List.SinglyLinkedList.ListNode"/>
     <fullyQualifiedTypeName name="Linked_List.SinglyLinkedList"/>
     <fullyQualifiedTypeName name="java.io.FileReader"/>
@@ -40,9 +36,6 @@
     <fullyQualifiedTypeName name="com.bridgelabz.inventorymanagement.service.Operation"/>
     <fullyQualifiedTypeName name="com.bridgelabz.inventorymanagement.model.Details"/>
     <fullyQualifiedTypeName name="com.bridgelabz.inventorymanagement.repository.Controller"/>
-    <fullyQualifiedTypeName name="org.codehaus.jackson.map.ObjectMapper"/>
-    <fullyQualifiedTypeName name="java.io.File"/>
-    <fullyQualifiedTypeName name="org.codehaus.jackson.type.TypeReference"/>
     <fullyQualifiedTypeName name="java.lang.ModuleLayer.Controller"/>
     <fullyQualifiedTypeName name="com.bridgelabz.clinique_management.controller.CliniqueManagement"/>
     <fullyQualifiedTypeName name="javax.management.openmbean.OpenMBeanOperationInfo"/>
@@ -56,8 +49,15 @@
     <fullyQualifiedTypeName name="com.bridgelabz.clinique_management.model.Patient"/>
     <fullyQualifiedTypeName name="com.bridgelabz.clinique_management.model.Appointment"/>
     <fullyQualifiedTypeName name="com.bridgelabz.clinique_management.service.Utility"/>
-    <fullyQualifiedTypeName name="java.util.List"/>
-    <fullyQualifiedTypeName name="java.util.LinkedList"/>
     <fullyQualifiedTypeName name="DeckCards"/>
     <fullyQualifiedTypeName name="java.lang.Math"/>
+    <fullyQualifiedTypeName name="org.codehaus.jackson.map.ObjectMapper"/>
+    <fullyQualifiedTypeName name="java.io.File"/>
+    <fullyQualifiedTypeName name="org.codehaus.jackson.type.TypeReference"/>
+    <fullyQualifiedTypeName name="java.util.LinkedList"/>
+    <fullyQualifiedTypeName name="com.bridgelabz.stockmanagement.repository.Controller"/>
+    <fullyQualifiedTypeName name="com.bridgelabz.stockmanagement.service.Operation"/>
+    <fullyQualifiedTypeName name="com.bridgelabz.stockmanagement.service.Utility"/>
+    <fullyQualifiedTypeName name="com.bridgelabz.stockmanagement.model.StockDetails"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
 </qualifiedTypeNameHistroy>
