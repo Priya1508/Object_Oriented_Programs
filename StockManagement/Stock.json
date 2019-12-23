@@ -1,1 +1,13 @@
-[ ]
+[ {
+  "name" : "airtel",
+  "numOfShare" : 5,
+  "sharePrice" : 300.0
+}, {
+  "name" : "docomo",
+  "numOfShare" : 4,
+  "sharePrice" : 200.0
+}, {
+  "name" : "vodafone",
+  "numOfShare" : 7,
+  "sharePrice" : 300.0
+} ]

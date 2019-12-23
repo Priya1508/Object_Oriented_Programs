@@ -4,9 +4,6 @@ import java.io.IOException;
 import java.util.LinkedList;
 import java.util.List;
 
-import org.codehaus.jackson.JsonParseException;
-import org.codehaus.jackson.map.JsonMappingException;
-
 import com.bridgelabz.clinique_management.model.Appointment;
 import com.bridgelabz.clinique_management.model.Doctor;
 import com.bridgelabz.clinique_management.model.Patient;

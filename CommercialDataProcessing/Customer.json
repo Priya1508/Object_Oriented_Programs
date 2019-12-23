@@ -1,0 +1,13 @@
+[ {
+  "customerName" : "xyz",
+  "numOfShare" : 2,
+  "shareprice" : 150.0
+}, {
+  "customerName" : "abc",
+  "numOfShare" : 3,
+  "shareprice" : 200.0
+}, {
+  "customerName" : "pqr",
+  "numOfShare" : 4,
+  "shareprice" : 300.0
+} ]
