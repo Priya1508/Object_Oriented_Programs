@@ -2,7 +2,6 @@ package com.bridgelabz.clinique_management.service;
 
 import java.util.List;
 
-import com.bridgelabz.clinique_management.model.Appointment;
 import com.bridgelabz.clinique_management.model.Doctor;
 import com.bridgelabz.clinique_management.model.Patient;
 

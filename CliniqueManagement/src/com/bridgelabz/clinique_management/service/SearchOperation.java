@@ -2,7 +2,6 @@ package com.bridgelabz.clinique_management.service;
 
 import java.util.List;
 
-import com.bridgelabz.clinique_management.model.Appointment;
 import com.bridgelabz.clinique_management.model.Doctor;
 import com.bridgelabz.clinique_management.model.Patient;
 
@@ -146,20 +145,58 @@ public class SearchOperation
 		}
 		
 		//TO TAKE APPOINTMENT
-//		public static List<Appointment> takeAppointment(List<Appointment> appointment)
-//		{
-//			System.out.println("Enter the id of the Doctor");
-//			int docId=Utility.inputInteger();
-//			System.out.println("Enter the shift you want to visit the doctor");
-//			String shift=Utility.inputString();
-//			
-//			for(int i=0;i<appointment.size();i++)
-//			{
-//				if(appointment.get(i).getId()==docId)
-//				{
-//					
-//				}
-//			}
-//			
-//		}
+		public static List<Doctor> takeAppointment(List<Doctor> doctorlist,List<Patient> patientlist)
+		{
+			do
+			{
+				System.out.println("Enter the Patient's Id");
+				int id=Utility.inputInteger();
+				for(int j=0;j<patientlist.size();j++)
+				{
+					if(patientlist.get(j).getId()==id)
+					{
+						System.out.println("Enter the name of the Doctor");
+						String docName=Utility.inputString();
+					
+						for(int i=0;i<doctorlist.size();i++)
+						{
+							if(doctorlist.get(i).getName().equals(docName))
+							{
+								System.out.println("Enter the specialization you want");
+								String special=Utility.inputString();
+								if(doctorlist.get(i).getSpecialization().equals(special))
+								{
+									System.out.println("Enter the shift you want");
+									String shift=Utility.inputString();
+									if(doctorlist.get(i).getAvailability().equals(shift))
+									{
+										if(doctorlist.get(i).getAppointment()<5)
+										{
+											int temp=0;
+											temp=temp+doctorlist.get(i).getAppointment()+1;
+											doctorlist.get(i).setAppointment(temp);
+											System.out.println("Appointment fixed of "+id+" with "+docName);
+										}
+										else
+										{
+											System.out.println("Doctor not available take another appointment");
+										}
+									}
+									else
+									{
+										System.out.println("Doctor not available at the given shift");
+									}
+								}
+								else
+								{
+									System.out.println("Doctor not available for the specified specialization");
+								}
+								System.out.println("To take more appointment type true");
+							}
+						}
+					}
+				}
+				return doctorlist;
+			}while(Utility.inputBoolean());
+		}
 }

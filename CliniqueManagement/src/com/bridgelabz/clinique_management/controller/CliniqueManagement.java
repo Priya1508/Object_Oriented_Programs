@@ -1,10 +1,8 @@
 package com.bridgelabz.clinique_management.controller;
 
 import java.io.IOException;
-import java.util.LinkedList;
 import java.util.List;
 
-import com.bridgelabz.clinique_management.model.Appointment;
 import com.bridgelabz.clinique_management.model.Doctor;
 import com.bridgelabz.clinique_management.model.Patient;
 import com.bridgelabz.clinique_management.repository.Controller;
@@ -55,11 +53,11 @@ public class CliniqueManagement
 				List<Patient> patientlist1=SearchOperation.printDetail(detail);
 				break;
 				
-//			case 5:
-//				List<Appointment> app=connection.readFileAppointment();
-//				List<Appointment> appointment=SearchOperation.takeAppointment(app);
-//				connection.writeFileAppointment(appointment);
-//				
+			case 5:
+				List<Doctor> info2=connection.readFileDoctor();
+				List<Patient> info3=connection.readFilePatient();
+				List<Doctor> doctorlist2=so.takeAppointment(info2,info3);
+				connection.writeFileDoctor(doctorlist2);
 			}
 		}while(Utility.inputBoolean());
 	}

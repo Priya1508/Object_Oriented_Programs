@@ -3,23 +3,23 @@
   "id" : 102,
   "specialization" : "ears",
   "availability" : "morning",
-  "appointment" : 4
+  "appointment" : 5
 }, {
   "name" : "priya",
   "id" : 103,
   "specialization" : "eyes",
   "availability" : "morning",
-  "appointment" : 3
+  "appointment" : 4
 }, {
   "name" : "vaibhav",
   "id" : 101,
   "specialization" : "nose",
   "availability" : "night",
-  "appointment" : 3
+  "appointment" : 4
 }, {
   "name" : "nihal",
   "id" : 104,
   "specialization" : "dentist",
-  "availability" : "both",
+  "availability" : "morning & night",
   "appointment" : 3
 } ]

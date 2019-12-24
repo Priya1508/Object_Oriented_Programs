@@ -4,13 +4,11 @@ import java.io.File;
 import java.io.IOException;
 import java.util.List;
 
-import org.codehaus.jackson.JsonGenerationException;
 import org.codehaus.jackson.JsonParseException;
 import org.codehaus.jackson.map.JsonMappingException;
 import org.codehaus.jackson.map.ObjectMapper;
 import org.codehaus.jackson.type.TypeReference;
 
-import com.bridgelabz.clinique_management.model.Appointment;
 import com.bridgelabz.clinique_management.model.Doctor;
 import com.bridgelabz.clinique_management.model.Patient;
 
@@ -18,7 +16,6 @@ public class Controller
 { 
 	Doctor doctor=new Doctor();
 	Patient patient=new Patient();
-	Appointment appointment=new Appointment();
 	static ObjectMapper mapper;
 	static 
 	{
@@ -53,17 +50,5 @@ public class Controller
 	{
 		mapper.defaultPrettyPrintingWriter().writeValue(filePatient, patientlist);
 	}
-	
-	//TO READ FILE FROM APPOINTMENT FILE
-	public List<Appointment> readFileAppointment() throws IOException
-	{
-		List<Appointment> info2=mapper.readValue(fileAppointment, new TypeReference <List<Appointment>>() {});
-		return info2;
-	}
-	
-	//TO WRITE ON APPOINTMENT FILE
-	public void writeFileAppointment(List<Appointment> appointment) throws IOException
-	{
-		mapper.defaultPrettyPrintingWriter().writeValue(fileAppointment, appointment);
-	}
+
 }
