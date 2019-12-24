@@ -1,0 +1,13 @@
+[ {
+  "name" : "pulses",
+  "priceperkg" : 30.0,
+  "weight" : 10
+}, {
+  "name" : "wheat",
+  "priceperkg" : 50.0,
+  "weight" : 40
+}, {
+  "name" : "noodles",
+  "priceperkg" : 0.0,
+  "weight" : 20
+} ]
