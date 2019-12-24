@@ -1,9 +1,12 @@
 package com.bridgelabz.commercialdataprocessing.service;
 
+import java.io.IOException;
+import java.util.LinkedList;
 import java.util.List;
 
 import com.bridgelabz.commercialdataprocessing.model.CompanyDetails;
 import com.bridgelabz.commercialdataprocessing.model.CustomerDetails;
+import com.bridgelabz.commercialdataprocessing.repository.Controller;
 
 public class Operation
 {
@@ -53,16 +56,17 @@ public class Operation
 	}
 	
 	//TO SELL SHARES
-	public List<CustomerDetails> sellShare(List<CompanyDetails> companylist, List<CustomerDetails> customerlist)
+	public List<CustomerDetails> sellShare(List<CompanyDetails> companylist, List<CustomerDetails> customerlist) throws IOException
 	{
+		Controller connection=new Controller();
 		do
 		{
 			System.out.println("Enter the company you want to sell share from");
-			String compNmae=Utility.inputString();
+			String compName=Utility.inputString();
 			
 			for(int i=0;i<companylist.size();i++)
 			{
-				if(companylist.get(i).getCompanyName().equals(compNmae))
+				if(companylist.get(i).getCompanyName().equals(compName))
 				{
 					System.out.println("Enter the name of the customer you want to sell");
 					String custName=Utility.inputString();
@@ -73,49 +77,84 @@ public class Operation
 							System.out.println("Enter the number of share you want to sell");
 							int share=Utility.inputInteger();
 							System.out.println(share);
-							System.out.println(customer.getNumOfShare());
-						
-//							int custShare=customer.getNumOfShare()+share;
-//							System.out.println("total "+custShare);
-							//int compShare=company.getNumbOfShare()-share;
-//							System.out.println("share successfully sold");
-//							System.out.println("To sell more share type true");
+							int share1=customerlist.get(j).getNumOfShare()+share;
+							System.out.println("Customer's share after buying from "+compName+" is "+share1);
+							int share2=companylist.get(i).getNumbOfShare()-share;
+							System.out.println("Company share after selling the share  to "+custName+" is "+share2);
+							customerlist.get(j).setNumOfShare(share1);
+							companylist.get(i).setNumbOfShare(share2);
+							System.out.println("To sell more shares type true");
 						}
 					}
 				}
 			}
+			connection.writeFileCompany(companylist);
 			return customerlist;
 		}while(Utility.inputBoolean());
 	}
 	
 	//TO BUY SHARES
-	public List<CustomerDetails> buyShare(List<CompanyDetails> companylist,List<CustomerDetails> customerlist)
+	public List<CustomerDetails> buyShare(List<CompanyDetails> companylist,List<CustomerDetails> customerlist) throws IOException
 	{
+		Controller connection=new Controller();
 		do
 		{
-			System.out.println("Enter the name of the customer who wants to buy the share");
+			System.out.println("Enter the name of the customer who wants to sell the shares");
 			String custName=Utility.inputString();
-			System.out.println(companylist.size()+" "+companylist);
+			
 			for(int i=0;i<customerlist.size();i++)
 			{
 				if(customerlist.get(i).getCustomerName().equals(custName))
 				{
-					System.out.println("Enter the name of the company from whom you want to buy");
+					System.out.println("Enter the name of the company who wants to buy the share");
 					String compName=Utility.inputString();
 					for(int j=0;j<companylist.size();j++)
 					{
 						if(companylist.get(j).getCompanyName().equals(compName))
 						{
-							System.out.println("Enter the number of shares you want to buy");
+							System.out.println("Enter the number of share company wants to buy");
 							int share=Utility.inputInteger();
-							System.out.println(customerlist.get(i).getNumOfShare()+"ahsd");
-							int finalShare=share+customer.getNumOfShare();
-							System.out.println("ddddd "+finalShare);
+							int share1=companylist.get(j).getNumbOfShare()+share;
+							System.out.println("Company's share after buying the share from "+custName+" is "+share1);
+							int share2=customerlist.get(i).getNumOfShare()-share;
+							System.out.println("Customer's share after selling the share to "+compName+" is "+share2);
+							companylist.get(j).setNumbOfShare(share1);
+							customerlist.get(i).setNumOfShare(share2);
+							System.out.println("To buy more shares typr true");
 						}
 					}
 				}
 			}
+			connection.writeFileCompany(companylist);
 			return customerlist;
 		}while(Utility.inputBoolean());
+	}
+	
+	//TO CALCULATE THE TOTAL SHARE OF THE COMPANY
+	public List<CompanyDetails> totalShareComp(List<CompanyDetails> companylist)
+	{
+		System.out.println("Total share of the company is: ");
+		int temp=0;
+		for(int i=0;i<companylist.size();i++)
+		{
+			int share=companylist.get(i).getNumbOfShare();
+			temp=temp+share;
+		}
+		System.out.println(temp);
+		return companylist;
+	}
+	
+	//TO CALCULATE THE TOTAL SHARE OF THE CUSTOMER
+	public List<CustomerDetails> totalShareCust(List<CustomerDetails> customerlist)
+	{
+		System.out.println("Total share of the customer is: ");
+		int temp=0;
+		for(int i=0;i<customerlist.size();i++)
+		{
+			int share=customerlist.get(i).getNumOfShare();
+			temp=temp+share;
+		}
+		System.out.println(temp);
+		return customerlist;
 	}
 }

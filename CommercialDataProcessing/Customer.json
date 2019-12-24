@@ -1,13 +1,13 @@
 [ {
   "customerName" : "xyz",
-  "numOfShare" : 2,
+  "numOfShare" : 5,
   "shareprice" : 150.0
 }, {
   "customerName" : "abc",
-  "numOfShare" : 3,
+  "numOfShare" : 1,
   "shareprice" : 200.0
 }, {
   "customerName" : "pqr",
-  "numOfShare" : 4,
+  "numOfShare" : 3,
   "shareprice" : 300.0
 } ]

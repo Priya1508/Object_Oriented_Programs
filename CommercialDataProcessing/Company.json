@@ -1,10 +1,10 @@
 [ {
   "companyName" : "reliance",
-  "numbOfShare" : 6,
+  "numbOfShare" : 8,
   "sharePrice" : 300.0
 }, {
   "companyName" : "airtel",
-  "numbOfShare" : 5,
+  "numbOfShare" : 3,
   "sharePrice" : 250.0
 }, {
   "companyName" : "vodafone",
@@ -12,6 +12,6 @@
   "sharePrice" : 200.0
 }, {
   "companyName" : "docomo",
-  "numbOfShare" : 3,
+  "numbOfShare" : 4,
   "sharePrice" : 350.0
 } ]

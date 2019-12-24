@@ -57,7 +57,7 @@
     <fullyQualifiedTypeName name="java.util.List"/>
     <fullyQualifiedTypeName name="java.util.LinkedList"/>
     <fullyQualifiedTypeName name="org.codehaus.jackson.map.ObjectMapper"/>
-    <fullyQualifiedTypeName name="com.bridgelabz.commercialdataprocessing.model.CompanyDetails"/>
     <fullyQualifiedTypeName name="com.bridgelabz.commercialdataprocessing.model.CustomerDetails"/>
     <fullyQualifiedTypeName name="com.bridgelabz.commercialdataprocessing.service.Utility"/>
+    <fullyQualifiedTypeName name="com.bridgelabz.commercialdataprocessing.model.CompanyDetails"/>
 </qualifiedTypeNameHistroy>

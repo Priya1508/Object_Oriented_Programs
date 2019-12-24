@@ -17,12 +17,12 @@ public class StockAccount {
 		Operation operation=new Operation();
 		do
 		{
-			System.out.println("Enter 1 to add company details");
-			System.out.println("Enter 2 to add customer details");
-			System.out.println("Enter 3 to sell company shares");
-			System.out.println("Enter 4 to buy comapny shares");
-			System.out.println("Enter 5 to calculate the total shares of the company");
-			System.out.println("Enter 6 to calculate the total shares of the customer");
+			System.out.println("Enter 1 to Add Company");
+			System.out.println("Enter 2 to Add Customer");
+			System.out.println("Enter 3 to Sell Company Shares");
+			System.out.println("Enter 4 to Buy Comapny Shares");
+			System.out.println("Enter 5 to calculate the total shares of all the Company's");
+			System.out.println("Enter 6 to calculate the total shares of all the Customer's");
 			//List<CompanyDetails> list=new LinkedList<>();
 			//List<CustomerDetails> list1=new LinkedList<>();
 			int choice=Utility.inputInteger();
@@ -50,8 +50,18 @@ public class StockAccount {
 			case 4:
 				List<CompanyDetails> info4=connection.readFileCompanyDetails();
 				List<CustomerDetails> info5=connection.readFileCustomerDetails();
-				List<CustomerDetails>  customerlist2=operation.buyShare(info4,info5);
+				List<CustomerDetails> customerlist2=operation.buyShare(info4,info5);
 				connection.writeFileCustomer(customerlist2);
+				break;
+				
+			case 5:
+				List<CompanyDetails> info6=connection.readFileCompanyDetails();
+				List<CompanyDetails> companylist3=operation.totalShareComp(info6);
+				break;
+				
+			case 6:
+				List<CustomerDetails> info7=connection.readFileCustomerDetails();
+				List<CustomerDetails> customerlist4=operation.totalShareCust(info7);
 				break;
 			}
 			
