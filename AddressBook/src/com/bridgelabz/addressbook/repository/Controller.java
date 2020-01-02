@@ -10,18 +10,18 @@ import org.codehaus.jackson.map.JsonMappingException;
 import org.codehaus.jackson.map.ObjectMapper;
 import org.codehaus.jackson.type.TypeReference;
 
-import com.bridgelabz.addressbook.model.PersonalDetails;
+import com.bridgelabz.addressbook.model.Person;
 
 public class Controller 
 {
-	PersonalDetails person=new PersonalDetails();
+	Person person = new Person();
 	static ObjectMapper mapper;
 	
 	static
 	{
-		mapper=new ObjectMapper();
+		mapper = new ObjectMapper();
 	}
-	File file=new File("AddressBook.json");
+	File file = new File("AddressBook.json");
 	
 	/**
 	 * READ FROM FILE
@@ -31,9 +31,9 @@ public class Controller
 	 * 
 	 */
 	
-	public List<PersonalDetails> readFile() throws JsonParseException, JsonMappingException, IOException
+	public List<Person> readFile() throws JsonParseException, JsonMappingException, IOException
 	{
-		List<PersonalDetails> info=mapper.readValue(file, new TypeReference <List<PersonalDetails>>() {});
+		List<Person> info = mapper.readValue(file, new TypeReference <List<Person>>() {});
 		return info;
 	}
 	
@@ -45,7 +45,7 @@ public class Controller
 	 * 
 	 */
 	
-	public void writeFile(List<PersonalDetails> personlist) throws JsonGenerationException, JsonMappingException, IOException
+	public void writeFile(List<Person> personlist) throws JsonGenerationException, JsonMappingException, IOException
 	{
 		mapper.defaultPrettyPrintingWriter().writeValue(file, personlist);
 	}

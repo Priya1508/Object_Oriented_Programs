@@ -5,6 +5,7 @@ public class CustomerDetails
 	private String customerName;
 	private int numOfShare;
 	private float shareprice;
+	
 	public String getCustomerName() 
 	{
 		return customerName;

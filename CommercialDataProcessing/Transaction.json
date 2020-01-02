@@ -1,0 +1,22 @@
+[ {
+  "companyName" : "reliance",
+  "numbOfShareComp" : 3,
+  "customerName" : "xyz",
+  "numOfShareCust" : 7,
+  "ldt" : {
+    "nano" : 406746000,
+    "year" : 2019,
+    "monthValue" : 12,
+    "dayOfMonth" : 27,
+    "hour" : 16,
+    "minute" : 41,
+    "second" : 5,
+    "dayOfWeek" : "FRIDAY",
+    "dayOfYear" : 361,
+    "month" : "DECEMBER",
+    "chronology" : {
+      "calendarType" : "iso8601",
+      "id" : "ISO"
+    }
+  }
+} ]

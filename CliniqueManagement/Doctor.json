@@ -3,19 +3,19 @@
   "id" : 102,
   "specialization" : "ears",
   "availability" : "morning",
-  "appointment" : 5
+  "appointment" : 4
 }, {
   "name" : "priya",
   "id" : 103,
   "specialization" : "eyes",
   "availability" : "morning",
-  "appointment" : 4
+  "appointment" : 3
 }, {
   "name" : "vaibhav",
   "id" : 101,
   "specialization" : "nose",
   "availability" : "night",
-  "appointment" : 4
+  "appointment" : 5
 }, {
   "name" : "nihal",
   "id" : 104,

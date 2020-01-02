@@ -1,9 +1,13 @@
 package com.bridgelabz.clinique_management.service;
 
+import java.io.IOException;
+import java.sql.Connection;
 import java.util.List;
 
+import com.bridgelabz.clinique_management.model.Appointment;
 import com.bridgelabz.clinique_management.model.Doctor;
 import com.bridgelabz.clinique_management.model.Patient;
+import com.bridgelabz.clinique_management.repository.Controller;
 
 public class SearchOperation 
 {
@@ -199,4 +203,74 @@ public class SearchOperation
 				return doctorlist;
 			}while(Utility.inputBoolean());
 		}
+		
+		//TO CHECK THE APPOINTMENT DETAILS
+		public static List<Appointment> appointmentDetails(List<Doctor> doctorlist,List<Patient> patientlist,List<Appointment> appointmentlist) throws IOException
+		{
+			Controller connection=new Controller();
+			Appointment app=new Appointment();
+			do
+			{
+				System.out.println("Enter the Patient's Id");
+				//Patient patient=new Patient();
+				int id=Utility.inputInteger();
+				
+				for(int i=0;i<patientlist.size();i++)
+				{
+					if(patientlist.get(i).getId()==id)
+					{
+					    app.setPatId(id);
+						//app.setPatId(patientlist.get(i).getId());
+						//System.out.println("4");
+						System.out.println("Enter the Doctor's name");
+						String docName=Utility.inputString();
+						for(int j=0;j<doctorlist.size();j++)
+						{
+							if(doctorlist.get(j).getName().equals(docName))
+							{
+								app.setDocName(docName);
+								System.out.println("Enter the specialization");
+								String special=Utility.inputString();
+								if(doctorlist.get(j).getSpecialization().equals(special))
+								{
+									app.setDocSpecialization(special);
+									System.out.println("Enter the preferred shift");
+									String shift=Utility.inputString();
+									if(doctorlist.get(j).getAvailability().equals(shift))
+									{
+										app.setDocAvailability(shift);
+										if(doctorlist.get(j).getAppointment()<5)
+										{
+											int temp=0;
+											temp=temp+doctorlist.get(j).getAppointment()+1;
+											doctorlist.get(j).setAppointment(temp);
+											app.setDocAppointment(temp);
+											System.out.println("Appointment fixed of "+id+" with "+docName);
+										}
+										else
+										{
+											System.out.println("Doctor not available take another appointment");
+										}
+									}
+									else
+									{
+										System.out.println("Doctor not available for preferred shift");
+									}
+								}
+								else
+								{
+									System.out.println("Doctor not available for preferred specialization");
+								}
+							}
+						}
+					}
+				}
+				appointmentlist.add(app);
+				System.out.println("To take more appointment type true");
+				connection.writeFileDoctor(doctorlist);
+				return appointmentlist;
+			}while(Utility.inputBoolean());
+		}
+
+	
 }

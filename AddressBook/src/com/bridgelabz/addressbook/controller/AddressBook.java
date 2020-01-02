@@ -1,13 +1,9 @@
 package com.bridgelabz.addressbook.controller;
 
-import java.io.File;
 import java.io.IOException;
-import java.util.LinkedList;
 import java.util.List;
 
-import org.codehaus.jackson.map.ObjectMapper;
-
-import com.bridgelabz.addressbook.model.PersonalDetails;
+import com.bridgelabz.addressbook.model.Person;
 import com.bridgelabz.addressbook.repository.Controller;
 import com.bridgelabz.addressbook.services.Operation;
 import com.bridgelabz.addressbook.services.Utility;
@@ -16,9 +12,8 @@ public class AddressBook {
 
 	public static void main(String[] args) throws IOException 
 	{
-		Controller connection=new Controller();
-		Operation operation=new Operation();
-		ObjectMapper mapper=new ObjectMapper();
+		Controller connection = new Controller();
+		Operation operation = new Operation();
 		do
 		{
 			System.out.println("Enter your choice: ");
@@ -27,24 +22,22 @@ public class AddressBook {
 			System.out.println("Enter 2 to Delete a Person's Detail");
 			System.out.println("Enter 3 to Edit the Person's Details");
 			System.out.println("Enter 4 to sort the address book by zip code");
-			System.out.println("Enter 5 to get the details of the specific Person");
+			System.out.println("Enter 5 to sort the address book by last name");
+			System.out.println("Enter 6 to get the details of the specific Person");
 			
-			int choice=Utility.inputInteger();
+			int choice = Utility.inputInteger();
 			switch(choice)
 			{
 			   case 1:
-				   List<PersonalDetails> read=connection.readFile();
-				   List<PersonalDetails> personlist=operation.addUser(read);
-				   mapper.defaultPrettyPrintingWriter().writeValue(new File("AddressBook.json"), personlist);
+				   List<Person> read = connection.readFile();
+				   List<Person> personlist = operation.addUser(read);
+				   connection.writeFile(personlist);
 				   break;
 				   
 			   case 2:
-				   List<PersonalDetails> read1=connection.readFile();
-				   boolean listOfPerson=operation.deleteUser(read1);
-				   if(listOfPerson==true) {
-					   System.out.println();
-				   }
-				   else
+				   List<Person> read1 = connection.readFile();
+				   boolean listOfPerson = operation.deleteUser(read1);
+				   if(listOfPerson == true)
 				   {
 					   System.out.println();
 				   }
@@ -52,20 +45,28 @@ public class AddressBook {
 				   break;
 				   
 			   case 3:
-				   List<PersonalDetails> read3=connection.readFile();
-				   List<PersonalDetails> personlist1=operation.editUser(read3);
-				   mapper.defaultPrettyPrintingWriter().writeValue(new File("AddressBook.json"), personlist1);
+				   List<Person> read3 = connection.readFile();
+				   List<Person> personlist1 = operation.editUser(read3);
+				   connection.writeFile(personlist1);
 				   break;
 				   
 			   case 4:
-//				   List<PersonalDetails> read4=connection.readFile();
-//				   List<PersonalDetails> personlist2=operation.sortZip(read4);
-//				   mapper.defaultPrettyPrintingWriter().writeValue(new File("AddressBook.json"), personlist2);
-//				   break;
+				   List<Person> read4=connection.readFile();
+				   List<Person> personlist2=operation.sortZip(read4);
+				   System.out.println("Sorted address book by zip code is ");
+				   System.out.println(personlist2);
+				   break;
 				   
 			   case 5:
-				   List<PersonalDetails> read5=connection.readFile();
-				   List<PersonalDetails> personlist3=operation.getDetails(read5);
+				   List<Person> read5 = connection.readFile();
+				   List<Person> personlist3 = operation.sortLastName(read5);
+				   System.out.println("Sorted address book by last name is ");
+				   System.out.println(personlist3);
+				   break;
+				   
+			   case 6:
+				   List<Person> read6 = connection.readFile();
+				   List<Person> personlist4 = operation.getDetails(read6);
 				   break;
 			}
 		}while(Utility.inputBoolean());

@@ -7,10 +7,12 @@ public class Doctor
 	private String Specialization;
 	private String Availability;
 	private int Appointment;
-	public int getAppointment() {
+	public int getAppointment() 
+	{
 		return Appointment;
 	}
-	public void setAppointment(int appointment) {
+	public void setAppointment(int appointment)
+	{
 		Appointment = appointment;
 	}
 	public String getName()
@@ -34,7 +36,7 @@ public class Doctor
 		return Specialization;
 	}
 	public void setSpecialization(String specialization)
-{
+	{
 		Specialization = specialization;
 	}
 	public String getAvailability() 
@@ -46,7 +48,8 @@ public class Doctor
 		Availability = availability;
 	}
 	@Override
-	public String toString() {
+	public String toString() 
+	{
 		return "Doctor [Name=" + Name + ", Id=" + Id + ", Specialization=" + Specialization + ", Availability="
 				+ Availability + ", Appointment=" + Appointment + "]";
 	}
